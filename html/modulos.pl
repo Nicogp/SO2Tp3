@@ -5,28 +5,25 @@ require("cgi-lib.pl"); #<-- Incluimos la librería.
 use CGI qw/:standard/;
 &ReadParse; #<-- Separamos las variables. 
 
-$nombre = $in{'variable'}; #<-- Asignamos los valores que 
-#$edad = $in{'edad'};      nos enviaron a las variables
-#$equipo = $in{'equipo'};  para utilizarlos. 
-#$email = $in{'email'}; 
 
 print &PrintHeader; #<-- Imprimimos el Header. 
 
 
        print 
            #header,
-           start_html('Estacion Meteorologica'),
-           h1('Precipitacion diaria de una Estacion');
-        $pro="./diario $nombre";
-        $devolucion = em(`$pro`);
+           start_html('MODULOS INSTALADOS'),
+           h1('MODULOS INSTALADOS');
+            
+        $devolucion = em(`lsmod`);
         my @values = split('\n', $devolucion);
 
         foreach my $val (@values) {
           print "$val\n";
           print "</BR>";
         }
+        #print "$devolucion";
         
-    
+                    
         print end_html;
 #print "<HTML>\n"; 
 #print "<HEAD>\n"; 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head><title>MODULOS DE LA ESTACION</title></head>
+	<BODY>
+		<H1>MODULOS DE LA ESTACION</H1>
+		<H3>LISTAR MODULOS</H3>
+		<P>LISTA LOS MODULOS DEL KERNEL QUE POSEE LA ESTACION <br/>
+		</P>
+
+		<form name="myform" action="modulos.pl" method="POST">
+			<br>
+				<input type="submit" value="LISTAR MODULOS">
+			<br>
+		</form>
+			
+		<H3>SUBIR UN NUEVO MODULO</H3>
+		<P>PERMITE SUBIR UN NUEVO MODULO PARA SER CARGADO A LA ESTACION <br/>
+		</P>
+
+		<form enctype="multipart/form-data" action="subir.pl" method="POST">
+				<input name="uploadmodulo" type="file" />
+				<input type="submit" value="Subir archivo" />
+		</form>
+	</BODY>
+	
+</html>

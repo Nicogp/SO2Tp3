@@ -18,24 +18,17 @@ print &PrintHeader; #<-- Imprimimos el Header.
            start_html('Estacion Meteorologica'),
            h1('DESCARGAR ESTACION');
         $pro="./descarga $nombre";    
-        $devoluvion = em(`$pro`);
-        $ruta = "$nombre".".txt";
-        print $ruta;
-        open(FILE, "<", $ruta);
-        binmode(FILE);
-
-        $size = -s $ruta;
-
-        $datos;
-
-        read(FILE, $datos, $size);
-
-        close(FILE);
-
-        print "<H3>MODULOS DEL SISTEMA</H3>";
-        $archivo = "Estacion"."$ruta";
-		print "<A HREF="$ruta" download>DESCARGAR</A>";
-    
+        $devolucion = em(`$pro`);
+        print "$devolucion";
+        print "</BR>";
+        if($devolucion =~ m/exito/){
+        	$ruta = "$nombre".".txt";
+        	print $ruta;
+        	print "</BR>";
+        	print "<H3>DESCARGAR ESTACION</H3>";
+        	print "<A HREF=\"\/$ruta\" download>DESCARGAR</A>";
+        }
+            
         print end_html;
 #print "<HTML>\n"; 
 #print "<HEAD>\n"; 

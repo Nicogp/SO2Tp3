@@ -18,7 +18,13 @@ print &PrintHeader; #<-- Imprimimos el Header.
            start_html('Estacion Meteorologica'),
            h1('Precipitacion mensual de una Estacion');
         $pro="./mensual $nombre";
-        print em(`$pro`);
+        $devolucion = em(`$pro`);
+        my @values1 = split('\n', $devolucion);
+
+        foreach my $val1 (@values1) {
+          print "$val1\n";
+          print "</BR>";
+        }
         
     
         print end_html;

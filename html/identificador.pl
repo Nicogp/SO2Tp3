@@ -18,7 +18,13 @@ print &PrintHeader; #<-- Imprimimos el Header.
            start_html('Estacion Meteorologica'),
            h1('Promedio de una variable');
         $pro="./promedio $nombre";
-        print em(`$pro`);
+        $devolucion = em(`$pro`);
+        my @values = split('\n', $devolucion);
+
+        foreach my $val (@values) {
+          print "$val\n";
+          print "</BR>";
+        }
         
     
         print end_html;
