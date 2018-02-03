@@ -14,12 +14,21 @@
 		</form>
 			
 		<H3>SUBIR UN NUEVO MODULO</H3>
-		<P>PERMITE SUBIR UN NUEVO MODULO PARA SER CARGADO A LA ESTACION <br/>
+		<P>PERMITE SUBIR Y CARGAR un NUEVO MODULO A LA ESTACION <br/>
 		</P>
 
 		<form enctype="multipart/form-data" action="subir.pl" method="POST">
 				<input name="uploadmodulo" type="file" />
 				<input type="submit" value="Subir archivo" />
+		</form>
+
+		<H3>REMOVER MODULO</H3>
+		<P>PERMITE REMOVER UN MODULO DE LA ESTACION <br/>
+		</P>
+
+		<form enctype="multipart/form-data" action="remover.pl" method="POST">
+				<input name="remmodulo" type="text" />
+				<input type="submit" value="Remover" />
 		</form>
 	</BODY>
 	
